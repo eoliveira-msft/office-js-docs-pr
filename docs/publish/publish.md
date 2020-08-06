@@ -17,6 +17,7 @@ You can use one of several methods to deploy your Office Add-in for testing or d
 |[SharePoint catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)|In an on-premises environment, to distribute your add-in to users in your organization.|
 |[AppSource](/office/dev/store/submit-to-appsource-via-partner-center)|To distribute your add-in publicly to users.|
 |[Exchange server](#outlook-add-in-deployment)|In an on-premises or online environment, to distribute Outlook add-ins to users.|
+| [Azure and Visual Studio Code](publish-add-in-in-vs-code.md)|In an online environment, distribute your add-in through an Azure website.|
 
 [!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
