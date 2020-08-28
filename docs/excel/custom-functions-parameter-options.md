@@ -224,7 +224,9 @@ For hand-authored JSON, ensure your parameter is specified as `"repeating": true
 
 ## Invocation parameter
 
-Every custom function is automatically passed an `invocation` argument as the last argument. This argument can be used to retrieve additional context, such as the address of the calling cell. Or it can be used to send information to Excel, such as a function handler for [canceling a function](custom-functions-web-reqs.md#make-a-streaming-function). Even if you declare no parameters, your custom function has this parameter. This argument doesn't appear for a user in Excel. If you want to use `invocation` in your custom function, declare it as the last parameter.
+Every custom function is automatically passed an `invocation` argument as the last argument. This argument can be used to retrieve additional context, such as the address of the calling cell. Or it can be used to send information to Excel, such as a function handler for [canceling a function](custom-functions-web-reqs.md#make-a-streaming-function). 
+
+Even if you declare no parameters, your custom function has this parameter. This argument doesn't appear for a user in Excel. If you want to use `invocation` in your custom function, declare it as the last parameter.
 
 In the following code sample, the `invocation` context is explicitly stated for your reference.
 
@@ -239,6 +241,29 @@ In the following code sample, the `invocation` context is explicitly stated for 
 function add(first, second, invocation) {
   return first + second;
 }
+```
+
+The invocation parameter can be used to retrieve information about the address of the cell that calls a function. For example, using inovcation.
+
+The following code sample illustrates how you can use
+
+```JS
+/**
+ * @customfunction
+ * @param {number} Number Number to add in a function
+ * @param {string[][]} description String description of product.
+ * @param {CustomFunctions.invocation}
+ * @requiresParameterAddresses
+ * @returns {string} The address of the calling cell, including worksheet name and    range, such as Sheet1!A1:B2.
+**/
+
+function getCallingCellAddress (itemNumber, description, invocation) {
+  /**The following gives the address of the 
+  var itemNumberAddress = invocation.parameterAddress[0]
+  /**The following 
+  var description = invocation.parameterAddress[1]
+}
+
 ```
 
 ## Next steps
